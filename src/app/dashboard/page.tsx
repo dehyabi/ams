@@ -1,3 +1,4 @@
+import DashboardLayout from "@/components/layout/DashboardLayout";
 import ActivityCard from "@/components/activities/ActivityCard";
 
 const activities = [
@@ -7,8 +8,11 @@ const activities = [
 
 export default function DashboardPage() {
     return (
-        <div className="p-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <DashboardLayout>
+            <h1 className="text-2xl font-bold mb-4">My Activities</h1>
+            <div className="p-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {activities.map((a) => ( <ActivityCard key={a.id} activity={a} /> ))}
-        </div>
+            </div>
+        </DashboardLayout>
     )
 }
